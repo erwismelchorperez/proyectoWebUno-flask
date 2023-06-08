@@ -1,0 +1,25 @@
+### con esto entramos a modo consola e iniciamos para hacer consultas SQL 
+
+flask --app aplication shell
+from aplication.models import User, Aplicacion
+from aplication import db
+##### crear usuario
+user = User('emelchor','Emelch0r1*')
+##### insertar usuario
+db.session.add(user)
+db.session.commit()
+##### Listar usuarios
+users = User.query.all()
+users
+###### 
+aplicacion = Aplicacion(1,'Curso Flask','desc')
+aplicacion2 = Aplicacion(1,'Curso Python','desc')
+db.session.add(aplicacion)
+db.session.add(aplicacion2)
+db.session.commit()
+aplicaciones = aplicacion.query.all()
+aplicaciones
+
+
+
+
